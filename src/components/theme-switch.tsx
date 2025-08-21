@@ -72,25 +72,37 @@ export const ThemeSwitch: React.FC = () => {
 
   if (!mounted) {
     return (
-      <FaCircleHalfStroke
-        className="h-[14px] w-[14px] text-[#1c1c1c]"
-        aria-hidden="true"
-      />
+      <div className="w-12 h-6 bg-gray-200 rounded-full relative">
+        <div className="w-5 h-5 bg-white rounded-full absolute top-0.5 left-0.5 transition-transform duration-300" />
+      </div>
     );
   }
 
   return (
     <button
       id="theme-toggle"
-      aria-label={`${currentTheme} mode`}
+      aria-label={`Switch to ${currentTheme === "light" ? "dark" : "light"} mode`}
       onClick={toggleTheme}
-      className="flex items-center justify-center transition-opacity duration-300 hover:opacity-90 cursor-pointer"
+      className="relative w-12 h-6 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+      style={{
+        background: currentTheme === "dark" 
+          ? "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+          : "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+      }}
     >
-      <FaCircleHalfStroke
-        className={`h-[14px] w-[14px] ${
-          currentTheme === "dark" ? "text-[#D4D4D4]" : "text-[#1c1c1c]"
+      <div 
+        className={`absolute top-0.5 w-5 h-5 rounded-full transition-all duration-300 flex items-center justify-center ${
+          currentTheme === "dark" 
+            ? "translate-x-6 bg-gray-800 shadow-lg" 
+            : "translate-x-0.5 bg-white shadow-lg"
         }`}
-      />
+      >
+        {currentTheme === "dark" ? (
+          <span className="text-xs">🌙</span>
+        ) : (
+          <span className="text-xs">☀️</span>
+        )}
+      </div>
     </button>
   );
 };

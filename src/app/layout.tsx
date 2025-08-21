@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Navbar } from "@/components/nav";
 import Footer from "@/components/footer";
-import { ThemeProvider } from "@/components/theme-switch";
+import BackgroundEffects from "@/components/background-effects";
+import { CursorFollower, ScrollProgress, FloatingActionButton } from "@/components/interactive-elements";
 import { metaData } from "@/lib/config";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -71,19 +72,18 @@ export default function RootLayout({
           title="JSON Feed"
         />
       </head>
-      <body className="antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-12">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main className="flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-[624px] w-full">
-            <Navbar />
+      <body className="antialiased dark">
+        <BackgroundEffects />
+        <CursorFollower />
+        <ScrollProgress />
+        <div className="relative z-10 min-h-screen">
+          <Navbar />
+          <main className="flex-auto min-w-0 pt-24 pb-12 flex flex-col px-6 sm:px-4 md:px-8 max-w-7xl mx-auto w-full">
             {children}
-            <Footer />
           </main>
-        </ThemeProvider>
+          <Footer />
+        </div>
+        <FloatingActionButton />
       </body>
     </html>
   );
