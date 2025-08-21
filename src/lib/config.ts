@@ -10,7 +10,7 @@ export const metaData = {
 // Need to add other links as well
 export const socialLinks = {
   github: "https://github.com/srimalonline",
-  instagram: "https://instagram.com/srimalonline",
+  instagram: "https://instagram.com/srimal.online",
   linkedin: "https://linkedin.com/in/srimal-online",
   email: "mailto:hi@srimal.me",
 }
