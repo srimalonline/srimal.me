@@ -52,16 +52,16 @@ export default function Footer() {
           <p className="text-lg font-medium text-gradient mb-2">
             {metaData.title}
           </p>
-          <p className="text-sm text-slate-600 dark:text-gray-400">
-            © {YEAR} • Building the future with code
-          </p>
+            <p className="text-sm text-slate-600 dark:text-gray-400">
+            © {YEAR} • Building the future with <span style={{ textDecoration: "line-through" }}>  code</span> prompts
+            </p>
         </div>
         
         <div className="flex flex-col items-center md:items-end gap-4">
           <SocialLinks />
-          <p className="text-xs text-gray-500 dark:text-gray-500 text-center">
-            Made with ❤️ and lots of ☕
-          </p>
+            <p className="text-xs text-gray-500 dark:text-gray-500 text-center">
+            Made with my 🦔 and lots of tokens
+            </p>
         </div>
       </div>
     </footer>

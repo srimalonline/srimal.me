@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { Navbar } from "@/components/nav";
 import Footer from "@/components/footer";
 import BackgroundEffects from "@/components/background-effects";
-import { CursorFollower, ScrollProgress, FloatingActionButton } from "@/components/interactive-elements";
+import { ScrollProgress, FloatingActionButton } from "@/components/interactive-elements";
 import { metaData } from "@/lib/config";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -74,7 +74,6 @@ export default function RootLayout({
       </head>
       <body className="antialiased dark">
         <BackgroundEffects />
-        <CursorFollower />
         <ScrollProgress />
         <div className="relative z-10 min-h-screen">
           <Navbar />

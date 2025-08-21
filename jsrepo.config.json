@@ -1,0 +1,4 @@
+{
+  "defaultPath": "./src/components/ui",
+  "registries": ["https://reactbits.dev/ts/tailwind"]
+}

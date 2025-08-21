@@ -177,3 +177,175 @@ html {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.05);
 }
+
+/* Neon glow effects */
+.neon-border {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+              linear-gradient(45deg, #60a5fa, #a78bfa, #ec4899, #22c55e) border-box;
+}
+
+.neon-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #60a5fa, #a78bfa, #ec4899, #22c55e, #60a5fa);
+  background-size: 300% 300%;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: neonRotate 3s linear infinite;
+}
+
+.neon-border:hover::before {
+  opacity: 0.8;
+  box-shadow: 
+    0 0 20px rgba(96, 165, 250, 0.5),
+    0 0 40px rgba(167, 139, 250, 0.3),
+    0 0 60px rgba(236, 72, 153, 0.2);
+}
+
+@keyframes neonRotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glass edge reflection for circular elements */
+.neon-circle {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.neon-circle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  opacity: 1;
+  animation: glassReflection 3s linear infinite;
+}
+
+@keyframes glassReflection {
+  0% { transform: rotate(0deg); border-top-color: rgba(255, 255, 255, 0.8); }
+  25% { border-top-color: transparent; border-right-color: rgba(255, 255, 255, 0.8); }
+  50% { border-right-color: transparent; border-bottom-color: rgba(255, 255, 255, 0.8); }
+  75% { border-bottom-color: transparent; border-left-color: rgba(255, 255, 255, 0.8); }
+  100% { border-left-color: transparent; border-top-color: rgba(255, 255, 255, 0.8); }
+}
+
+/* Glass edge reflection for navigation */
+.nav-neon {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+}
+
+.nav-neon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  opacity: 1;
+  animation: glassReflectionNav 4s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes glassReflectionNav {
+  0% { 
+    border-top-color: rgba(255, 255, 255, 0.6);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  25% { 
+    border-top-color: transparent;
+    border-right-color: rgba(255, 255, 255, 0.6);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  50% { 
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: rgba(255, 255, 255, 0.6);
+    border-left-color: transparent;
+  }
+  75% { 
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: rgba(255, 255, 255, 0.6);
+  }
+  100% { 
+    border-top-color: rgba(255, 255, 255, 0.6);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+}
+
+/* Shimmer animation for components */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Glass shimmer effect */
+@keyframes glass-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Modal animations */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fadeInScale {
+  animation: fadeInScale 0.2s ease-out;
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.animate-fadeOutDown {
+  animation: fadeOutDown 0.3s ease forwards;
+}
