@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 import Image from "next/image";
 
-interface ProfileCardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ProfileCardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   name: string;
   title: string | React.ReactNode;
   description?: string;

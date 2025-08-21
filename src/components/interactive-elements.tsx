@@ -137,12 +137,14 @@ export const useTilt = (ref: React.RefObject<HTMLElement>, intensity = 20) => {
       element.removeEventListener('mousemove', handleMouseMove);
       element.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [intensity]);
+  }, [ref, intensity]);
 };
 
-export default {
+const InteractiveElements = {
   CursorFollower,
   ScrollProgress,
   FloatingActionButton,
   useTilt
 };
+
+export default InteractiveElements;
