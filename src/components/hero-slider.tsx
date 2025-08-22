@@ -57,7 +57,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <div className="w-full h-[80vh] md:h-[70vh] p-2 sm:p-4 md:p-6">
+    <div className="w-full h-[70vh] p-2 sm:p-4 md:p-6">
       <section className="relative w-full h-full overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
         {/* Animated neon glow border */}
         <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-75 blur-sm animate-pulse"></div>
