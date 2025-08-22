@@ -1,6 +1,6 @@
 export const metaData = {
   baseUrl: "https://srimal.me",
-  title: "Srimal Fenando",
+  title: "Srimal Fernando",
   name: "Srimal Fernando",
   ogImage: "/srimal-fernando.png",
   description:
