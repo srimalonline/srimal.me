@@ -91,7 +91,7 @@ export default function HeroSlider() {
               <div className={`absolute inset-0 ${getOverlayClass(section.background.overlay)}`} />
             )}
             
-            <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6 md:p-8">
+            <div className="absolute inset-0 flex items-end justify-center p-4 sm:p-6 md:p-8 pb-8 sm:pb-12 md:pb-16">
               <div className={`text-center text-white max-w-2xl sm:max-w-4xl lg:max-w-5xl mx-auto transition-all duration-1000 ${
                 isAnimating ? 'opacity-0 transform translate-y-8' : 'opacity-100 transform translate-y-0'
               }`}>

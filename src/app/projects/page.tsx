@@ -93,7 +93,7 @@ const projects = [
   }
 ];
 
-const categories = ['All', 'AI/ML', 'Research', 'Web Development', 'Full-Stack', 'Leadership', 'Academic'];
+// const categories = ['All', 'AI/ML', 'Research', 'Web Development', 'Full-Stack', 'Leadership', 'Academic'];
 
 export default function ProjectsPage() {
   return (
@@ -173,11 +173,11 @@ export default function ProjectsPage() {
       {/* Call to Action */}
       <div className="text-center glass rounded-3xl p-8">
         <h2 className="text-3xl font-bold text-gradient mb-4">
-          Let's Build Something Amazing Together
+          Let&apos;s Build Something Amazing Together
         </h2>
         <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
           Interested in collaborating on innovative projects or discussing technical solutions? 
-          I'm always excited to work on challenging problems and create impactful technology.
+          I&apos;m always excited to work on challenging problems and create impactful technology.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a 

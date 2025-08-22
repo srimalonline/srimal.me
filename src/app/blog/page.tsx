@@ -83,7 +83,7 @@ const blogPosts = [
   }
 ];
 
-const categories = ['All', 'AI Research', 'Technology', 'Mentorship', 'Community', 'Education', 'Competition', 'Social Impact', 'Media'];
+// const categories = ['All', 'AI Research', 'Technology', 'Mentorship', 'Community', 'Education', 'Competition', 'Social Impact', 'Media'];
 
 export default function BlogPage() {
   return (

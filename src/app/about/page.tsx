@@ -103,7 +103,7 @@ export default function AboutPage() {
           <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
               My journey in technology began with curiosity about how intelligent systems could 
-              transform our world. As a first-class Computer Science graduate, I've dedicated 
+              transform our world. As a first-class Computer Science graduate, I&apos;ve dedicated 
               myself to exploring the frontiers of artificial intelligence and machine learning.
             </p>
             <p>
@@ -112,8 +112,8 @@ export default function AboutPage() {
               My work spans across AI research, full-stack development, and community leadership.
             </p>
             <p>
-              Beyond technical expertise, I'm passionate about mentoring the next generation 
-              of engineers and fostering innovation through community building. Whether it's 
+              Beyond technical expertise, I&apos;m passionate about mentoring the next generation 
+              of engineers and fostering innovation through community building. Whether it&apos;s 
               organizing hackathons, leading workshops, or volunteering globally, I strive to 
               make technology accessible and impactful for everyone.
             </p>
@@ -234,11 +234,11 @@ export default function AboutPage() {
       {/* Contact CTA */}
       <div className="text-center glass rounded-3xl p-8">
         <h2 className="text-3xl font-bold text-gradient mb-4">
-          Let's Connect & Collaborate
+          Let&apos;s Connect & Collaborate
         </h2>
         <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
           Interested in discussing AI research, exploring collaboration opportunities, or 
-          just want to connect? I'm always excited to meet fellow innovators and learn from each other.
+          just want to connect? I&apos;m always excited to meet fellow innovators and learn from each other.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a 

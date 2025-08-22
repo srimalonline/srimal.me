@@ -305,7 +305,7 @@ export default function ResearchPage() {
         </h2>
         <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
           Interested in collaborating on AI research, data science projects, or smart city innovations? 
-          Let's explore how we can work together to advance the boundaries of technology.
+          Let&apos;s explore how we can work together to advance the boundaries of technology.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
