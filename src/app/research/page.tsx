@@ -115,10 +115,10 @@ export default function ResearchPage() {
 
       {/* Research Areas */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-gradient mb-8 text-center">Research Areas</h2>
+        <h2 className="text-3xl font-bold text-gradient mb-8 text-center fade-in">Research Areas</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {researchAreas.map((area, index) => (
-            <div key={index} className="glass rounded-2xl p-6 hover-lift">
+            <div key={index} className={`glass rounded-2xl p-6 hover-lift fade-in-stagger-${index + 1}`}>
               <div className="flex items-center gap-4 mb-4">
                 <span className="text-3xl">{area.icon}</span>
                 <h3 className="text-xl font-semibold text-white">{area.title}</h3>
@@ -215,10 +215,10 @@ export default function ResearchPage() {
 
       {/* Current Projects */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-gradient mb-8 text-center">Current Research Projects</h2>
+        <h2 className="text-3xl font-bold text-gradient mb-8 text-center fade-in">Current Research Projects</h2>
         <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {currentProjects.map((project, index) => (
-            <div key={index} className="glass rounded-2xl overflow-hidden hover-lift group">
+            <div key={index} className={`glass rounded-2xl overflow-hidden hover-lift group fade-in-stagger-${index + 1}`}>
               <div className="relative h-48">
                 <Image
                   src={project.image}

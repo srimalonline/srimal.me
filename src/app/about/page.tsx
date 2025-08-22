@@ -142,10 +142,10 @@ export default function AboutPage() {
 
       {/* Skills Section */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-gradient mb-8 text-center">Technical Expertise</h2>
+        <h2 className="text-3xl font-bold text-gradient mb-8 text-center fade-in">Technical Expertise</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Object.entries(skills).map(([category, skillList]) => (
-            <div key={category} className="glass rounded-2xl p-6 hover-lift">
+          {Object.entries(skills).map(([category, skillList], index) => (
+            <div key={category} className={`glass rounded-2xl p-6 hover-lift fade-in-stagger-${Math.min(index + 1, 6)}`}>
               <h3 className="text-xl font-semibold text-blue-400 mb-4">{category}</h3>
               <div className="flex flex-wrap gap-2">
                 {skillList.map((skill) => (
@@ -164,10 +164,10 @@ export default function AboutPage() {
 
       {/* Achievements Section */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-gradient mb-8 text-center">Key Achievements</h2>
+        <h2 className="text-3xl font-bold text-gradient mb-8 text-center fade-in">Key Achievements</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {achievements.map((achievement, index) => (
-            <div key={index} className="glass rounded-2xl overflow-hidden hover-lift group">
+            <div key={index} className={`glass rounded-2xl overflow-hidden hover-lift group fade-in-stagger-${index + 1}`}>
               <div className="relative h-48">
                 <Image
                   src={achievement.image}

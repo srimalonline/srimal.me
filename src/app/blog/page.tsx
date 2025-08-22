@@ -161,8 +161,8 @@ export default function BlogPage() {
 
       {/* Blog Posts Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        {blogPosts.slice(1).map((post) => (
-          <article key={post.id} className="glass rounded-2xl overflow-hidden hover-lift group">
+        {blogPosts.slice(1).map((post, index) => (
+          <article key={post.id} className={`glass rounded-2xl overflow-hidden hover-lift group fade-in-stagger-${Math.min(index + 1, 6)}`}>
             <div className="relative h-48 overflow-hidden">
               <Image
                 src={post.image}

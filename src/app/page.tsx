@@ -8,7 +8,7 @@ export default function Page() {
       {/* Welcome Section */}
       <div className="w-full py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="glass rounded-3xl p-8 md:p-12 text-center hover-lift">
+          <div className="glass rounded-3xl p-8 md:p-12 text-center hover-lift fade-in">
             <div className="mb-6">
               <span className="text-4xl md:text-5xl font-black text-gradient block mb-4">
                 Ayubowan! 🙏
@@ -19,19 +19,19 @@ export default function Page() {
             </div>
             
             <div className="grid md:grid-cols-3 gap-6 mt-8">
-              <div className="glass rounded-2xl p-6 hover-lift">
+              <div className="glass rounded-2xl p-6 hover-lift fade-in-stagger-1">
                 <div className="text-3xl mb-3">🚀</div>
                 <h3 className="text-lg font-semibold text-white mb-2">AI Research</h3>
                 <p className="text-sm text-gray-400">Pushing boundaries in machine learning and intelligent systems</p>
               </div>
               
-              <div className="glass rounded-2xl p-6 hover-lift">
+              <div className="glass rounded-2xl p-6 hover-lift fade-in-stagger-2">
                 <div className="text-3xl mb-3">💻</div>
                 <h3 className="text-lg font-semibold text-white mb-2">Development</h3>
                 <p className="text-sm text-gray-400">Building scalable applications with modern technologies</p>
               </div>
               
-              <div className="glass rounded-2xl p-6 hover-lift">
+              <div className="glass rounded-2xl p-6 hover-lift fade-in-stagger-3">
                 <div className="text-3xl mb-3">🌟</div>
                 <h3 className="text-lg font-semibold text-white mb-2">Mentorship</h3>
                 <p className="text-sm text-gray-400">Empowering the next generation of engineers and innovators</p>

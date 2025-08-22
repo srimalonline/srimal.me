@@ -111,8 +111,8 @@ export default function ProjectsPage() {
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        {projects.map((project) => (
-          <div key={project.id} className="glass rounded-2xl overflow-hidden hover-lift group">
+        {projects.map((project, index) => (
+          <div key={project.id} className={`glass rounded-2xl overflow-hidden hover-lift group fade-in-stagger-${Math.min(index + 1, 6)}`}>
             <div className="relative h-48 overflow-hidden">
               <Image
                 src={project.image}
