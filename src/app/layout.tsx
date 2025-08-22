@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { Navbar } from "@/components/nav";
 import Footer from "@/components/footer";
 import BackgroundEffects from "@/components/background-effects";
-import { ScrollProgress, FloatingActionButton } from "@/components/interactive-elements";
+import { FloatingActionButton } from "@/components/interactive-elements";
 import { metaData } from "@/lib/config";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -41,7 +41,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/srimal-fernando.png",
+    shortcut: "/srimal-fernando.png",
+    apple: "/srimal-fernando.png",
   },
 };
 
@@ -74,7 +76,6 @@ export default function RootLayout({
       </head>
       <body className="antialiased dark">
         <BackgroundEffects />
-        <ScrollProgress />
         <div className="relative z-10 min-h-screen">
           <Navbar />
           <main className="flex-auto min-w-0 pt-24 pb-12 flex flex-col px-6 sm:px-4 md:px-8 max-w-7xl mx-auto w-full">

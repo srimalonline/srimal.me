@@ -1,13 +1,13 @@
 "use client";
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
-import { FaBars, FaTimes, FaCode, FaRocket, FaCamera, FaChartLine } from 'react-icons/fa'
+import { FaBars, FaTimes, FaCode, FaRocket, FaMicroscope, FaChartLine } from 'react-icons/fa'
 import { PresentationModal } from './presentation-modal'
 
 const navItems = {
   "/blog": {name: "Blog", icon: <FaCode className="w-4 h-4" />, type: "link"},
   "/projects": {name: "Projects", icon: <FaRocket className="w-4 h-4" />, type: "link"},
-  "/photos": {name: "Photos", icon: <FaCamera className="w-4 h-4" />, type: "link"},
+  "/research": {name: "Research", icon: <FaMicroscope className="w-4 h-4" />, type: "link"},
   "presentations": {name: "Presentations", icon: <FaChartLine className="w-4 h-4" />, type: "modal"},
 }
 

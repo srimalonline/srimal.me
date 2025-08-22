@@ -216,6 +216,12 @@ html {
   100% { background-position: 0% 50%; }
 }
 
+/* Slow spin animation for hero glow */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 /* Glass edge reflection for circular elements */
 .neon-circle {
   position: relative;

@@ -1,0 +1,205 @@
+{
+  "component": "heroSlider",
+  "layout": "full-width",
+  "responsive": true,
+  "autoplay": true,
+  "transition": "fade",
+  "duration": 4000,
+  "sections": [
+    {
+      "id": "hero1",
+      "background": {
+        "type": "image",
+        "url": "/images/research nsrsit 2025.webp",
+        "overlay": "dark"
+      },
+      "headline": "AI Research Pioneer",
+      "subheadline": "Breaking boundaries in intelligent systems and data-driven innovation.",
+      "cta": {
+        "text": "Explore Research",
+        "url": "/projects",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero2",
+      "background": {
+        "type": "image",
+        "url": "/images/research nsrsut 2025 2.webp",
+        "overlay": "dark"
+      },
+      "headline": "Data Science Visionary",
+      "subheadline": "Transforming complex data into actionable insights and breakthrough solutions.",
+      "cta": {
+        "text": "View Analytics",
+        "url": "/projects",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero3",
+      "background": {
+        "type": "image",
+        "url": "/images/ieee technical mentor.webp",
+        "overlay": "dark"
+      },
+      "headline": "Tech Mentor & Leader",
+      "subheadline": "Empowering the next generation of engineers and innovators.",
+      "cta": {
+        "text": "Mentorship Impact",
+        "url": "/blog",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero4",
+      "background": {
+        "type": "image",
+        "url": "/images/ieee technical mentor 2.webp",
+        "overlay": "dark"
+      },
+      "headline": "Innovation Catalyst",
+      "subheadline": "Driving technological breakthroughs and digital transformation.",
+      "cta": {
+        "text": "Innovation Lab",
+        "url": "/projects",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero5",
+      "background": {
+        "type": "image",
+        "url": "/images/graduration.webp",
+        "overlay": "dark"
+      },
+      "headline": "First-Class Graduate",
+      "subheadline": "Computer Science excellence with honors and real-world expertise.",
+      "cta": {
+        "text": "Academic Journey",
+        "url": "/about",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero6",
+      "background": {
+        "type": "image",
+        "url": "/images/smart traffic light.webp",
+        "overlay": "dark"
+      },
+      "headline": "Smart Systems Creator",
+      "subheadline": "Building intelligent infrastructure for smarter, connected cities.",
+      "cta": {
+        "text": "Smart Solutions",
+        "url": "/projects",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero7",
+      "background": {
+        "type": "image",
+        "url": "/images/nsbm senior orientation 2023.webp",
+        "overlay": "dark"
+      },
+      "headline": "Community Builder",
+      "subheadline": "Creating inspiring experiences that connect minds and foster innovation.",
+      "cta": {
+        "text": "Community Impact",
+        "url": "/blog",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero8",
+      "background": {
+        "type": "image",
+        "url": "/images/nsbm senior orientation 2024.webp",
+        "overlay": "dark"
+      },
+      "headline": "Event Experience Designer",
+      "subheadline": "Orchestrating memorable tech experiences that inspire and educate.",
+      "cta": {
+        "text": "Event Portfolio",
+        "url": "/blog",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero9",
+      "background": {
+        "type": "image",
+        "url": "/images/duothan 2  - hackathon mentor.webp",
+        "overlay": "dark"
+      },
+      "headline": "Hackathon Champion",
+      "subheadline": "Mentoring brilliant minds and turning ideas into winning solutions.",
+      "cta": {
+        "text": "Competition Wins",
+        "url": "/projects",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero10",
+      "background": {
+        "type": "image",
+        "url": "/images/ieee extreme night volunteer.webp",
+        "overlay": "dark"
+      },
+      "headline": "Code Marathon Warrior",
+      "subheadline": "Pushing limits in competitive programming and technical challenges.",
+      "cta": {
+        "text": "Programming Skills",
+        "url": "/projects",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero11",
+      "background": {
+        "type": "image",
+        "url": "/images/aiesec project coast voluneer.webp",
+        "overlay": "dark"
+      },
+      "headline": "Global Impact Volunteer",
+      "subheadline": "Making waves in international development and social innovation.",
+      "cta": {
+        "text": "Global Initiatives",
+        "url": "/blog",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero12",
+      "background": {
+        "type": "image",
+        "url": "/images/steerx media volunteer.webp",
+        "overlay": "dark"
+      },
+      "headline": "Digital Storyteller",
+      "subheadline": "Capturing and creating compelling narratives through multimedia.",
+      "cta": {
+        "text": "Media Stories",
+        "url": "/blog",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero13",
+      "background": {
+        "type": "image",
+        "url": "/images/Picsart_22-11-21_17-37-50-741.webp",
+        "overlay": "dark"
+      },
+      "headline": "Creative Technologist",
+      "subheadline": "Blending artistry with technology to create extraordinary experiences.",
+      "cta": {
+        "text": "Creative Works",
+        "url": "/projects",
+        "style": "glass"
+      }
+    }
+  ]
+}
