@@ -104,32 +104,32 @@ export default function ResearchPage() {
     <div className="min-h-screen py-8">
       {/* Header */}
       <div className="text-center mb-16">
-        <h1 className="text-5xl md:text-6xl font-black text-gradient mb-6">
+        <h1 className="text-5xl md:text-6xl font-black text-black mb-6">
           Research Portfolio
         </h1>
-        <p className="text-xl text-slate-600 dark:text-gray-400 max-w-4xl mx-auto">
-          Advancing the frontiers of artificial intelligence, data science, and smart city technologies 
+        <p className="text-xl text-gray-700 max-w-4xl mx-auto">
+          Advancing the frontiers of artificial intelligence, data science, and smart city technologies
           through innovative research and practical applications that solve real-world problems.
         </p>
       </div>
 
       {/* Research Areas */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-gradient mb-8 text-center fade-in">Research Areas</h2>
+        <h2 className="text-3xl font-bold text-black mb-8 text-center fade-in">Research Areas</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {researchAreas.map((area, index) => (
             <div key={index} className={`glass rounded-2xl p-6 hover-lift fade-in-stagger-${index + 1}`}>
               <div className="flex items-center gap-4 mb-4">
                 <span className="text-3xl">{area.icon}</span>
-                <h3 className="text-xl font-semibold text-white">{area.title}</h3>
+                <h3 className="text-xl font-semibold text-black">{area.title}</h3>
               </div>
-              <p className="text-gray-300 mb-4 leading-relaxed">{area.description}</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">{area.description}</p>
               <div className="space-y-2">
-                <h4 className="text-sm font-semibold text-blue-400">Active Projects:</h4>
-                <ul className="text-sm text-gray-400 space-y-1">
+                <h4 className="text-sm font-semibold text-black/70">Active Projects:</h4>
+                <ul className="text-sm text-gray-700 space-y-1">
                   {area.projects.map((project, idx) => (
                     <li key={idx} className="flex items-center">
-                      <span className="text-blue-400 mr-2">•</span>
+                      <span className="text-black/60 mr-2">•</span>
                       {project}
                     </li>
                   ))}
@@ -142,7 +142,7 @@ export default function ResearchPage() {
 
       {/* Publications */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-gradient mb-8 text-center">Publications & Papers</h2>
+        <h2 className="text-3xl font-bold text-black mb-8 text-center">Publications & Papers</h2>
         <div className="space-y-8">
           {publications.map((pub) => (
             <article key={pub.id} className="glass rounded-2xl overflow-hidden hover-lift group">
@@ -157,9 +157,9 @@ export default function ResearchPage() {
                   />
                   <div className="absolute top-4 right-4">
                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      pub.status === 'Published' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
-                      pub.status === 'Under Review' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
-                      'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                      pub.status === 'Published' ? 'bg-black/20 text-black/70 border border-black/30' :
+                      pub.status === 'Under Review' ? 'bg-black/15 text-black/60 border border-black/25' :
+                      'bg-black/10 text-black/50 border border-black/20'
                     }`}>
                       {pub.status}
                     </span>
@@ -168,40 +168,42 @@ export default function ResearchPage() {
                 
                 <div className="md:col-span-2 space-y-4">
                   <div>
-                    <span className="text-sm text-blue-400 font-semibold">{pub.type} • {pub.year}</span>
-                    <h3 className="text-xl font-bold text-white mt-1 group-hover:text-blue-400 transition-colors">
+                    <span className="text-sm text-black/70 font-semibold">{pub.type} • {pub.year}</span>
+                    <h3 className="text-xl font-bold text-black mt-1 group-hover:text-gray-700 transition-colors">
                       {pub.title}
                     </h3>
-                    <p className="text-sm text-gray-400 mt-1">
+                    <p className="text-sm text-gray-600 mt-1">
                       {pub.authors.join(', ')}
                     </p>
-                    <p className="text-sm text-purple-400 font-medium">
+                    <p className="text-sm text-gray-700 font-medium">
                       {pub.venue}
                     </p>
                   </div>
-                  
-                  <p className="text-gray-300 text-sm leading-relaxed">
+
+                  <p className="text-gray-700 text-sm leading-relaxed">
                     {pub.abstract}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     {pub.tags.map((tag) => (
-                      <span key={tag} className="px-2 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-md border border-blue-500/20">
+                      <span key={tag} className="px-2 py-1 bg-black/5 text-black/70 text-xs rounded-md border border-black/10">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  
+
                   <div className="flex gap-4">
-                    <a 
+                    <a
                       href={pub.link}
-                      className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 glow hover-lift"
+                      className="px-4 py-2 bg-black text-sm font-semibold rounded-full hover:bg-gray-900 transition-all duration-300 hover-lift"
+                      style={{ color: 'white' }}
                     >
                       View Paper
                     </a>
-                    <a 
+                    <a
                       href={pub.pdf}
-                      className="px-4 py-2 glass text-sm font-semibold rounded-full hover-lift transition-all duration-300"
+                      className="px-4 py-2 glass text-sm font-semibold rounded-full hover-lift transition-all duration-300 border border-black/10"
+                      style={{ color: 'black' }}
                     >
                       Download PDF
                     </a>
@@ -215,7 +217,7 @@ export default function ResearchPage() {
 
       {/* Current Projects */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-gradient mb-8 text-center fade-in">Current Research Projects</h2>
+        <h2 className="text-3xl font-bold text-black mb-8 text-center fade-in">Current Research Projects</h2>
         <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {currentProjects.map((project, index) => (
             <div key={index} className={`glass rounded-2xl overflow-hidden hover-lift group fade-in-stagger-${index + 1}`}>
@@ -231,9 +233,9 @@ export default function ResearchPage() {
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="flex items-center justify-between mb-2">
                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      project.status === 'Ongoing' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
-                      project.status === 'Active' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
-                      'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
+                      project.status === 'Ongoing' ? 'bg-black/20 text-black/70 border border-black/30' :
+                      project.status === 'Active' ? 'bg-black/15 text-black/60 border border-black/25' :
+                      'bg-black/10 text-black/50 border border-black/20'
                     }`}>
                       {project.status}
                     </span>
@@ -242,8 +244,8 @@ export default function ResearchPage() {
                     </span>
                   </div>
                   <div className="w-full bg-black/30 rounded-full h-2">
-                    <div 
-                      className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-500"
+                    <div
+                      className="bg-black h-2 rounded-full transition-all duration-500"
                       style={{width: `${project.progress}%`}}
                     ></div>
                   </div>
@@ -251,19 +253,19 @@ export default function ResearchPage() {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-black group-hover:text-gray-700 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                <p className="text-gray-700 text-sm mb-4 leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-blue-400 mb-2">Collaborators:</h4>
-                  <ul className="text-xs text-gray-400 space-y-1">
+                  <h4 className="text-sm font-semibold text-black/70 mb-2">Collaborators:</h4>
+                  <ul className="text-xs text-gray-700 space-y-1">
                     {project.collaborators.map((collaborator, idx) => (
                       <li key={idx} className="flex items-center">
-                        <span className="text-blue-400 mr-2">•</span>
+                        <span className="text-black/60 mr-2">•</span>
                         {collaborator}
                       </li>
                     ))}
@@ -277,46 +279,48 @@ export default function ResearchPage() {
 
       {/* Research Impact */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-gradient mb-8 text-center">Research Impact</h2>
+        <h2 className="text-3xl font-bold text-black mb-8 text-center">Research Impact</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="glass rounded-2xl p-6 text-center hover-lift">
-            <div className="text-3xl font-black text-blue-400 mb-2">5+</div>
-            <div className="text-gray-300 text-sm">Published Papers</div>
+            <div className="text-3xl font-black text-black mb-2">5+</div>
+            <div className="text-gray-700 text-sm">Published Papers</div>
           </div>
           <div className="glass rounded-2xl p-6 text-center hover-lift">
-            <div className="text-3xl font-black text-purple-400 mb-2">3</div>
-            <div className="text-gray-300 text-sm">Active Projects</div>
+            <div className="text-3xl font-black text-black mb-2">3</div>
+            <div className="text-gray-700 text-sm">Active Projects</div>
           </div>
           <div className="glass rounded-2xl p-6 text-center hover-lift">
-            <div className="text-3xl font-black text-green-400 mb-2">10+</div>
-            <div className="text-gray-300 text-sm">Collaborators</div>
+            <div className="text-3xl font-black text-black mb-2">10+</div>
+            <div className="text-gray-700 text-sm">Collaborators</div>
           </div>
           <div className="glass rounded-2xl p-6 text-center hover-lift">
-            <div className="text-3xl font-black text-orange-400 mb-2">2</div>
-            <div className="text-gray-300 text-sm">Research Areas</div>
+            <div className="text-3xl font-black text-black mb-2">2</div>
+            <div className="text-gray-700 text-sm">Research Areas</div>
           </div>
         </div>
       </div>
 
       {/* Collaboration CTA */}
       <div className="text-center glass rounded-3xl p-8">
-        <h2 className="text-3xl font-bold text-gradient mb-4">
+        <h2 className="text-3xl font-bold text-black mb-4">
           Collaborate on Cutting-Edge Research
         </h2>
-        <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-          Interested in collaborating on AI research, data science projects, or smart city innovations? 
+        <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+          Interested in collaborating on AI research, data science projects, or smart city innovations?
           Let&apos;s explore how we can work together to advance the boundaries of technology.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="mailto:research@srimal.me" 
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 glow hover-lift"
+          <a
+            href="mailto:research@srimal.me"
+            className="px-8 py-4 bg-black font-semibold rounded-full hover:bg-gray-900 transition-all duration-300 hover-lift"
+            style={{ color: 'white' }}
           >
             Research Collaboration
           </a>
-          <a 
-            href="/projects" 
-            className="px-8 py-4 glass font-semibold rounded-full hover-lift transition-all duration-300"
+          <a
+            href="/projects"
+            className="px-8 py-4 glass font-semibold rounded-full hover-lift transition-all duration-300 border border-black/10"
+            style={{ color: 'black' }}
           >
             View Technical Projects
           </a>

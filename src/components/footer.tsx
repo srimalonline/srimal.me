@@ -18,11 +18,11 @@ type SocialLinkProps = {
 
 function SocialLink({ href, icon: Icon }: SocialLinkProps) {
   return (
-    <a 
-      href={href} 
-      target="_blank" 
+    <a
+      href={href}
+      target="_blank"
       rel="noopener noreferrer"
-      className="hover:text-blue-500 dark:hover:text-purple-400 transition-all duration-300 hover:scale-110 glow"
+      className="text-black/60 hover:text-black transition-all duration-300 hover:scale-110"
     >
       <Icon />
     </a>
@@ -45,19 +45,19 @@ export default function Footer() {
     <footer className="glass rounded-t-3xl mt-24 p-8 mx-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 max-w-6xl mx-auto">
         <div className="text-center md:text-left">
-          <p className="text-lg font-medium text-gradient mb-2">
+          <p className="text-lg font-medium text-black mb-2">
             {metaData.title}
           </p>
-            <p className="text-sm text-slate-600 dark:text-gray-400">
-            © {YEAR} • Building the future with <span style={{ textDecoration: "line-through" }}>  code</span> prompts
-            </p>
+          <p className="text-sm text-gray-600">
+            © {YEAR} • Building the future with <span style={{ textDecoration: "line-through" }}> code</span> prompts
+          </p>
         </div>
-        
+
         <div className="flex flex-col items-center md:items-end gap-4">
           <SocialLinks />
-            <p className="text-xs text-gray-500 dark:text-gray-500 text-center">
+          <p className="text-xs text-gray-600 text-center">
             Made with my 🦔 and lots of tokens
-            </p>
+          </p>
         </div>
       </div>
     </footer>

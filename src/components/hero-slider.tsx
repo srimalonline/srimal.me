@@ -53,26 +53,20 @@ export default function HeroSlider() {
   };
 
   const getCtaStyle = () => {
-    return 'px-8 py-4 font-semibold rounded-full hover-lift transition-all duration-300 inline-block bg-black/40 border border-white/30 hover:bg-black/60 hover:border-white/50 shadow-lg';
+    return 'px-8 py-4 font-semibold rounded-full hover-lift transition-all duration-300 inline-block bg-black border border-black hover:bg-gray-900 hover:border-gray-900 shadow-lg';
   };
 
   return (
-    <div className="w-full h-[70vh] p-2 sm:p-4 md:p-6">
-      <section className="relative w-full h-full overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
-        {/* Animated neon glow border */}
-        <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-75 blur-sm animate-pulse"></div>
-        <div 
-          className="absolute inset-[2px] rounded-2xl sm:rounded-3xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 opacity-60"
-          style={{
-            animation: 'spin-slow 8s linear infinite'
-          }}
-        ></div>
+    <div className="w-full h-auto min-h-[50vh] sm:min-h-[60vh] p-2 sm:p-4 md:p-6">
+      <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] overflow-hidden rounded-2xl sm:rounded-3xl shadow-lg">
+        {/* Subtle minimal border */}
+        <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border border-black/10"></div>
         
         {sections.map((section, index) => (
           <div
             key={section.id}
-            className={`absolute inset-[3px] rounded-2xl sm:rounded-3xl transition-all duration-1000 ease-in-out overflow-hidden ${
-              index === currentSlide ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-110 z-0'
+            className={`absolute inset-0 rounded-2xl sm:rounded-3xl transition-all duration-1000 ease-in-out overflow-hidden ${
+              index === currentSlide ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 z-0'
             }`}
           >
           <div className="relative h-full w-full">
@@ -92,15 +86,13 @@ export default function HeroSlider() {
             )}
             
             <div className="absolute inset-0 flex items-end justify-center p-4 sm:p-6 md:p-8 pb-8 sm:pb-12 md:pb-16">
-              <div className={`text-center text-white max-w-2xl sm:max-w-4xl lg:max-w-5xl mx-auto transition-all duration-1000 ${
+              <div className={`text-center max-w-2xl sm:max-w-4xl lg:max-w-5xl mx-auto transition-all duration-1000 ${
                 isAnimating ? 'opacity-0 transform translate-y-8' : 'opacity-100 transform translate-y-0'
               }`}>
-                <h1 className="mb-4 sm:mb-6 text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[0.9] tracking-tight drop-shadow-2xl animate-fade-in-up">
-                  <span className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent font-display">
-                    {section.headline}
-                  </span>
+                <h1 className="mb-4 sm:mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.9] tracking-tight drop-shadow-lg animate-fade-in-up text-white">
+                  {section.headline}
                 </h1>
-                
+
                 <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-light leading-relaxed mb-6 sm:mb-8 lg:mb-10 drop-shadow-lg max-w-xs sm:max-w-2xl lg:max-w-4xl mx-auto text-white/90 animate-fade-in-up animation-delay-200 tracking-wide">
                   {section.subheadline}
                 </p>
@@ -109,11 +101,12 @@ export default function HeroSlider() {
                   <div className="relative">
                     <a
                       href={section.cta.url}
-                      className={`${getCtaStyle()} text-sm sm:text-base animate-fade-in-up animation-delay-600 animate-bounce-in relative z-20`}
+                      className={`${getCtaStyle()} text-sm sm:text-base animate-fade-in-up animation-delay-600 animate-bounce-in relative z-20 text-white`}
                       style={{
                         animationDelay: '0.8s',
                         animationFillMode: 'both',
-                        willChange: 'transform'
+                        willChange: 'transform',
+                        color: 'white'
                       }}
                     >
                       {section.cta.text}

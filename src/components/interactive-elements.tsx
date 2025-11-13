@@ -39,12 +39,12 @@ export const CursorFollower = () => {
   }, []);
 
   return (
-    <div 
+    <div
       ref={cursorRef}
       className={`fixed w-6 h-6 rounded-full pointer-events-none z-50 mix-blend-difference transition-all duration-150 ${
-        isPointer 
-          ? 'bg-white scale-150' 
-          : 'bg-gradient-to-r from-blue-500 to-purple-500 scale-100'
+        isPointer
+          ? 'bg-white scale-150'
+          : 'bg-black scale-100'
       }`}
       style={{ transform: 'translate(-50%, -50%)' }}
     />
@@ -67,9 +67,9 @@ export const ScrollProgress = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-1 z-50 bg-gray-200/20 dark:bg-gray-800/20">
-      <div 
-        className="h-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-150"
+    <div className="fixed top-0 left-0 w-full h-1 z-50 bg-gray-200/20">
+      <div
+        className="h-full bg-black transition-all duration-150"
         style={{ width: `${progress}%` }}
       />
     </div>
@@ -96,7 +96,7 @@ export const FloatingActionButton = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 p-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 z-40 glow hover-lift ${
+      className={`fixed bottom-8 right-8 p-4 rounded-full bg-black text-white shadow-lg hover:shadow-xl hover:bg-gray-900 transition-all duration-300 z-40 hover-lift ${
         isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
       }`}
       aria-label="Scroll to top"

@@ -74,7 +74,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <div className="text-center mb-16">
         <div className="relative inline-block mb-8">
-          <div className="w-40 h-40 mx-auto relative">
+          <div className="w-40 h-40 mx-auto relative border-2 border-black/10 rounded-full overflow-hidden">
             <Image
               src="/srimal-fernando.png"
               alt="Srimal Fernando"
@@ -83,39 +83,37 @@ export default function AboutPage() {
               priority
               unoptimized
             />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/20 to-purple-500/20"></div>
           </div>
         </div>
         
-        <h1 className="text-5xl md:text-6xl font-black text-gradient mb-6">
+        <h1 className="text-5xl md:text-6xl font-black text-black mb-6">
           About Srimal Fernando
         </h1>
-        <p className="text-xl text-slate-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-          AI researcher, software engineer, and technology enthusiast passionate about building 
-          intelligent systems that solve real-world problems and create positive impact.
+        <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          Researcher and engineer specializing in artificial intelligence, machine learning, and scalable software systems.
+          Committed to advancing the field through rigorous research, innovative solutions, and technical leadership.
         </p>
       </div>
 
       {/* Story Section */}
       <div className="grid md:grid-cols-2 gap-12 mb-20">
         <div>
-          <h2 className="text-3xl font-bold text-gradient mb-6">My Story</h2>
-          <div className="space-y-4 text-gray-300 leading-relaxed">
+          <h2 className="text-3xl font-bold text-black mb-6">My Story</h2>
+          <div className="space-y-4 text-gray-700 leading-relaxed">
             <p>
-              My journey in technology began with curiosity about how intelligent systems could 
-              transform our world. As a first-class Computer Science graduate, I&apos;ve dedicated 
-              myself to exploring the frontiers of artificial intelligence and machine learning.
+              As a Computer Science graduate with first-class honors, I have developed a strong foundation in both theoretical
+              computer science and practical software engineering. My academic and professional journey has been driven by a
+              commitment to advancing artificial intelligence and machine learning through rigorous research.
             </p>
             <p>
-              From developing smart traffic systems to conducting research at international 
-              conferences, I believe in the power of technology to create meaningful change. 
-              My work spans across AI research, full-stack development, and community leadership.
+              My work encompasses research in intelligent systems, full-stack software development, and technical leadership.
+              I have contributed to publications at international conferences and developed solutions for complex real-world problems,
+              from intelligent traffic systems to advanced machine learning models.
             </p>
             <p>
-              Beyond technical expertise, I&apos;m passionate about mentoring the next generation 
-              of engineers and fostering innovation through community building. Whether it&apos;s 
-              organizing hackathons, leading workshops, or volunteering globally, I strive to 
-              make technology accessible and impactful for everyone.
+              As a technical mentor and research leader, I am dedicated to fostering knowledge sharing and innovation within the
+              engineering community. Through academic collaboration, technical mentorship, and research initiatives, I work to advance
+              both individual capabilities and the broader field of artificial intelligence.
             </p>
           </div>
         </div>
@@ -131,10 +129,10 @@ export default function AboutPage() {
                 unoptimized
               />
             </div>
-            <h3 className="text-xl font-semibold text-blue-400 mb-2">Research Focus</h3>
-            <p className="text-gray-300 text-sm">
-              Currently pursuing advanced research in AI and data science, focusing on 
-              intelligent algorithms and their practical applications in solving complex problems.
+            <h3 className="text-xl font-semibold text-black mb-2">Research & Development</h3>
+            <p className="text-gray-700 text-sm">
+              Conducting advanced research in artificial intelligence and machine learning. Current focus includes
+              intelligent algorithms, data science applications, and the theoretical foundations of modern AI systems.
             </p>
           </div>
         </div>
@@ -142,16 +140,16 @@ export default function AboutPage() {
 
       {/* Skills Section */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-gradient mb-8 text-center fade-in">Technical Expertise</h2>
+        <h2 className="text-3xl font-bold text-black mb-8 text-center fade-in">Technical Expertise</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Object.entries(skills).map(([category, skillList], index) => (
             <div key={category} className={`glass rounded-2xl p-6 hover-lift fade-in-stagger-${Math.min(index + 1, 6)}`}>
-              <h3 className="text-xl font-semibold text-blue-400 mb-4">{category}</h3>
+              <h3 className="text-xl font-semibold text-black mb-4">{category}</h3>
               <div className="flex flex-wrap gap-2">
                 {skillList.map((skill) => (
-                  <span 
-                    key={skill} 
-                    className="px-3 py-1 bg-blue-500/10 text-blue-400 text-sm rounded-full border border-blue-500/20 hover:bg-blue-500/20 transition-colors"
+                  <span
+                    key={skill}
+                    className="px-3 py-1 bg-black/5 text-black/70 text-sm rounded-full border border-black/10 hover:bg-black/10 transition-colors"
                   >
                     {skill}
                   </span>
@@ -164,7 +162,7 @@ export default function AboutPage() {
 
       {/* Achievements Section */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-gradient mb-8 text-center fade-in">Key Achievements</h2>
+        <h2 className="text-3xl font-bold text-black mb-8 text-center fade-in">Key Achievements</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {achievements.map((achievement, index) => (
             <div key={index} className={`glass rounded-2xl overflow-hidden hover-lift group fade-in-stagger-${index + 1}`}>
@@ -176,18 +174,18 @@ export default function AboutPage() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   unoptimized
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                 <div className="absolute top-4 right-4">
-                  <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full border border-blue-500/30">
+                  <span className="px-3 py-1 bg-black/10 text-black/60 text-xs font-semibold rounded-full border border-black/20">
                     {achievement.year}
                   </span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-semibold text-black mb-2 group-hover:text-gray-700 transition-colors">
                   {achievement.title}
                 </h3>
-                <p className="text-gray-300 text-sm">
+                <p className="text-gray-700 text-sm">
                   {achievement.description}
                 </p>
               </div>
@@ -198,7 +196,7 @@ export default function AboutPage() {
 
       {/* Timeline Section */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-gradient mb-8 text-center">Journey Timeline</h2>
+        <h2 className="text-3xl font-bold text-black mb-8 text-center">Journey Timeline</h2>
         <div className="space-y-8">
           {timeline.map((item, index) => (
             <div key={index} className="flex gap-8 group">
@@ -215,14 +213,14 @@ export default function AboutPage() {
               </div>
               <div className="glass rounded-2xl p-6 hover-lift flex-1">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-sm font-semibold rounded-full border border-blue-500/30">
+                  <span className="px-3 py-1 bg-black/10 text-black/60 text-sm font-semibold rounded-full border border-black/20">
                     {item.year}
                   </span>
-                  <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl font-semibold text-black group-hover:text-gray-700 transition-colors">
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -233,23 +231,23 @@ export default function AboutPage() {
 
       {/* Contact CTA */}
       <div className="text-center glass rounded-3xl p-8">
-        <h2 className="text-3xl font-bold text-gradient mb-4">
-          Let&apos;s Connect & Collaborate
+        <h2 className="text-3xl font-bold text-black mb-4">
+          Get In Touch
         </h2>
-        <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-          Interested in discussing AI research, exploring collaboration opportunities, or 
-          just want to connect? I&apos;m always excited to meet fellow innovators and learn from each other.
+        <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+          Interested in discussing research collaborations, technical partnerships, or exploring opportunities to advance
+          the field of artificial intelligence? I welcome inquiries from fellow researchers and industry professionals.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="mailto:contact@srimal.me" 
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 glow hover-lift"
+          <a
+            href="mailto:contact@srimal.me"
+            className="px-8 py-4 bg-black text-white font-semibold rounded-full hover:bg-gray-900 transition-all duration-300 hover-lift"
           >
             Get In Touch
           </a>
-          <a 
-            href="/projects" 
-            className="px-8 py-4 glass font-semibold rounded-full hover-lift transition-all duration-300"
+          <a
+            href="/projects"
+            className="px-8 py-4 bg-white border-2 border-black text-black font-semibold rounded-full hover:bg-gray-100 hover-lift transition-all duration-300"
           >
             View My Work
           </a>

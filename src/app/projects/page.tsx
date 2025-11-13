@@ -100,11 +100,11 @@ export default function ProjectsPage() {
     <div className="min-h-screen py-8">
       {/* Header */}
       <div className="text-center mb-16">
-        <h1 className="text-5xl md:text-6xl font-black text-gradient mb-6">
+        <h1 className="text-5xl md:text-6xl font-black text-black mb-6">
           My Projects
         </h1>
-        <p className="text-xl text-slate-600 dark:text-gray-400 max-w-3xl mx-auto">
-          A showcase of my technical expertise, research contributions, and innovative solutions 
+        <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          A showcase of my technical expertise, research contributions, and innovative solutions
           spanning AI/ML, web development, and academic excellence.
         </p>
       </div>
@@ -124,9 +124,9 @@ export default function ProjectsPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               <div className="absolute top-4 right-4">
                 <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                  project.status === 'Completed' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
-                  project.status === 'Ongoing' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
-                  'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
+                  project.status === 'Completed' ? 'bg-black/20 text-black/70 border border-black/30' :
+                  project.status === 'Ongoing' ? 'bg-black/15 text-black/60 border border-black/25' :
+                  'bg-black/10 text-black/50 border border-black/20'
                 }`}>
                   {project.status}
                 </span>
@@ -139,28 +139,28 @@ export default function ProjectsPage() {
             </div>
             
             <div className="p-6">
-              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">
+              <h3 className="text-xl font-bold mb-3 text-black group-hover:text-gray-700 transition-colors">
                 {project.title}
               </h3>
-              <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+              <p className="text-gray-700 text-sm mb-4 leading-relaxed">
                 {project.description}
               </p>
-              
+
               <div className="mb-4">
-                <h4 className="text-sm font-semibold text-blue-400 mb-2">Key Highlights:</h4>
-                <ul className="text-xs text-gray-400 space-y-1">
+                <h4 className="text-sm font-semibold text-black/70 mb-2">Key Highlights:</h4>
+                <ul className="text-xs text-gray-700 space-y-1">
                   {project.highlights.map((highlight, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-blue-400 mr-2">•</span>
+                      <span className="text-black/60 mr-2">•</span>
                       {highlight}
                     </li>
                   ))}
                 </ul>
               </div>
-              
+
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
-                  <span key={tech} className="px-2 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-md border border-blue-500/20">
+                  <span key={tech} className="px-2 py-1 bg-black/8 text-black/80 text-xs rounded-md border border-black/15">
                     {tech}
                   </span>
                 ))}
@@ -172,23 +172,25 @@ export default function ProjectsPage() {
 
       {/* Call to Action */}
       <div className="text-center glass rounded-3xl p-8">
-        <h2 className="text-3xl font-bold text-gradient mb-4">
+        <h2 className="text-3xl font-bold text-black mb-4">
           Let&apos;s Build Something Amazing Together
         </h2>
-        <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-          Interested in collaborating on innovative projects or discussing technical solutions? 
+        <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+          Interested in collaborating on innovative projects or discussing technical solutions?
           I&apos;m always excited to work on challenging problems and create impactful technology.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="mailto:contact@srimal.me" 
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 glow hover-lift"
+          <a
+            href="mailto:contact@srimal.me"
+            className="px-8 py-4 bg-black font-semibold rounded-full hover:bg-gray-900 transition-all duration-300 hover-lift"
+            style={{ color: 'white' }}
           >
             Start a Conversation
           </a>
-          <a 
-            href="/blog" 
-            className="px-8 py-4 glass font-semibold rounded-full hover-lift transition-all duration-300"
+          <a
+            href="/blog"
+            className="px-8 py-4 glass font-semibold rounded-full hover-lift transition-all duration-300 border border-black/10"
+            style={{ color: 'black' }}
           >
             Read My Articles
           </a>

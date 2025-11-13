@@ -1,10 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Navbar } from "@/components/nav";
-import Footer from "@/components/footer";
-import BackgroundEffects from "@/components/background-effects";
-import { FloatingActionButton } from "@/components/interactive-elements";
+import { PresentationProvider } from "@/context/presentation-context";
+import LayoutContent from "@/components/layout-content";
 import { metaData } from "@/lib/config";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -74,16 +72,10 @@ export default function RootLayout({
           title="JSON Feed"
         />
       </head>
-      <body className="antialiased dark">
-        <BackgroundEffects />
-        <div className="relative z-10 min-h-screen">
-          <Navbar />
-          <main className="flex-auto min-w-0 pt-24 pb-12 flex flex-col px-6 sm:px-4 md:px-8 max-w-7xl mx-auto w-full">
-            {children}
-          </main>
-          <Footer />
-        </div>
-        <FloatingActionButton />
+      <body className="antialiased">
+        <PresentationProvider>
+          <LayoutContent>{children}</LayoutContent>
+        </PresentationProvider>
       </body>
     </html>
   );

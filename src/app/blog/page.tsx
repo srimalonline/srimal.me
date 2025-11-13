@@ -90,11 +90,11 @@ export default function BlogPage() {
     <div className="min-h-screen py-8">
       {/* Header */}
       <div className="text-center mb-16">
-        <h1 className="text-5xl md:text-6xl font-black text-gradient mb-6">
+        <h1 className="text-5xl md:text-6xl font-black text-black mb-6">
           Tech Insights & Stories
         </h1>
-        <p className="text-xl text-slate-600 dark:text-gray-400 max-w-3xl mx-auto">
-          Exploring the intersection of technology, research, and human impact through personal experiences, 
+        <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          Exploring the intersection of technology, research, and human impact through personal experiences,
           technical insights, and lessons learned from the field.
         </p>
       </div>
@@ -113,7 +113,7 @@ export default function BlogPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full border border-blue-500/30">
+                <span className="px-3 py-1 bg-black/30 text-white text-xs font-semibold rounded-full border border-white/30 backdrop-blur-sm">
                   Featured
                 </span>
               </div>
@@ -121,33 +121,34 @@ export default function BlogPage() {
             
             <div className="flex flex-col justify-center">
               <div className="mb-4">
-                <span className="text-sm text-blue-400 font-semibold">{blogPosts[0].category}</span>
-                <div className="flex items-center gap-2 text-xs text-gray-400 mt-1">
+                <span className="text-sm text-black/70 font-semibold">{blogPosts[0].category}</span>
+                <div className="flex items-center gap-2 text-xs text-gray-600 mt-1">
                   <span>{blogPosts[0].date}</span>
                   <span>•</span>
                   <span>{blogPosts[0].readTime}</span>
                 </div>
               </div>
-              
-              <h2 className="text-3xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
+
+              <h2 className="text-3xl font-bold text-black mb-4 group-hover:text-gray-700 transition-colors">
                 {blogPosts[0].title}
               </h2>
-              
-              <p className="text-gray-300 mb-6 leading-relaxed">
+
+              <p className="text-gray-700 mb-6 leading-relaxed">
                 {blogPosts[0].excerpt}
               </p>
-              
+
               <div className="flex flex-wrap gap-2 mb-6">
                 {blogPosts[0].tags.map((tag) => (
-                  <span key={tag} className="px-2 py-1 bg-gray-700/50 text-gray-300 text-xs rounded-md">
+                  <span key={tag} className="px-2 py-1 bg-black/5 text-black/70 text-xs rounded-md border border-black/10">
                     #{tag}
                   </span>
                 ))}
               </div>
-              
-              <a 
+
+              <a
                 href={`/blog/${blogPosts[0].id}`}
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 glow hover-lift inline-flex items-center w-fit"
+                className="px-6 py-3 bg-black font-semibold rounded-full hover:bg-gray-900 transition-all duration-300 hover-lift inline-flex items-center w-fit"
+                style={{ color: 'white' }}
               >
                 Read Article
                 <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -180,31 +181,31 @@ export default function BlogPage() {
             </div>
             
             <div className="p-6">
-              <div className="flex items-center gap-2 text-xs text-gray-400 mb-3">
+              <div className="flex items-center gap-2 text-xs text-gray-600 mb-3">
                 <span>{post.date}</span>
                 <span>•</span>
                 <span>{post.readTime}</span>
               </div>
-              
-              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors line-clamp-2">
+
+              <h3 className="text-xl font-bold mb-3 text-black group-hover:text-gray-700 transition-colors line-clamp-2">
                 {post.title}
               </h3>
-              
-              <p className="text-gray-300 text-sm mb-4 leading-relaxed line-clamp-3">
+
+              <p className="text-gray-700 text-sm mb-4 leading-relaxed line-clamp-3">
                 {post.excerpt}
               </p>
-              
+
               <div className="flex flex-wrap gap-1 mb-4">
                 {post.tags.slice(0, 3).map((tag) => (
-                  <span key={tag} className="px-2 py-1 bg-gray-700/30 text-gray-400 text-xs rounded">
+                  <span key={tag} className="px-2 py-1 bg-black/5 text-black/60 text-xs rounded border border-black/10">
                     #{tag}
                   </span>
                 ))}
               </div>
-              
-              <a 
+
+              <a
                 href={`/blog/${post.id}`}
-                className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold"
+                className="inline-flex items-center text-black hover:text-gray-700 transition-colors text-sm font-semibold"
               >
                 Read More
                 <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -218,20 +219,20 @@ export default function BlogPage() {
 
       {/* Newsletter Signup */}
       <div className="text-center glass rounded-3xl p-8">
-        <h2 className="text-3xl font-bold text-gradient mb-4">
+        <h2 className="text-3xl font-bold text-black mb-4">
           Stay Updated with Latest Insights
         </h2>
-        <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-          Get notified about new articles on AI research, technology trends, and lessons from the field. 
+        <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+          Get notified about new articles on AI research, technology trends, and lessons from the field.
           Join a community of innovators and lifelong learners.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-          <input 
-            type="email" 
-            placeholder="Enter your email" 
-            className="px-4 py-3 glass rounded-full flex-1 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-white/20"
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="px-4 py-3 rounded-full flex-1 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black/20 border border-black/10 bg-white"
           />
-          <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 glow hover-lift whitespace-nowrap">
+          <button className="px-8 py-3 bg-black text-white font-semibold rounded-full hover:bg-gray-900 transition-all duration-300 hover-lift whitespace-nowrap">
             Subscribe
           </button>
         </div>

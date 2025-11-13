@@ -2,12 +2,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --accent: #60a5fa;
-  --accent-secondary: #a78bfa;
-  --gradient-start: #667eea;
-  --gradient-end: #764ba2;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --accent: #000000;
+  --accent-secondary: #4b5563;
+  --gradient-start: #000000;
+  --gradient-end: #4b5563;
 }
 
 @theme inline {
@@ -19,6 +19,12 @@
 
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -26,6 +32,48 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+
+/* Professional typography */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.5px;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Link styling */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
 }
 
 /* Animated gradient background */
@@ -35,11 +83,10 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(-45deg, 
-    rgba(59, 130, 246, 0.03), 
-    rgba(139, 92, 246, 0.03), 
-    rgba(236, 72, 153, 0.03), 
-    rgba(34, 197, 94, 0.03)
+  background: linear-gradient(-45deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(245, 245, 245, 0.98),
+    rgba(240, 240, 240, 0.95)
   );
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
@@ -65,9 +112,9 @@ body {
 
 .particle {
   position: absolute;
-  width: 2px;
-  height: 2px;
-  background: rgba(167, 139, 250, 0.3);
+  width: 1px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
   border-radius: 50%;
   animation: float 20s infinite linear;
 }
@@ -198,10 +245,10 @@ html {
 
 /* Glass morphism */
 .glass {
-  backdrop-filter: blur(16px);
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 /* Hover effects */
@@ -290,9 +337,9 @@ html {
 /* Glass edge reflection for navigation */
 .nav-neon {
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
 }
 
 .nav-neon::before {

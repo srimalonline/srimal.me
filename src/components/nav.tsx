@@ -1,8 +1,9 @@
 "use client";
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React, { useState, useEffect } from 'react'
 import { FaBars, FaTimes, FaCode, FaRocket, FaMicroscope, FaChartLine } from 'react-icons/fa'
-import { PresentationModal } from './presentation-modal'
+import { usePresentationModal } from '@/context/presentation-context'
 
 const navItems = {
   "/blog": {name: "Blog", icon: <FaCode className="w-4 h-4" />, type: "link"},
@@ -12,9 +13,10 @@ const navItems = {
 }
 
 export function Navbar() {
+  const pathname = usePathname();
+  const { openPresentationModal } = usePresentationModal();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isPresentationModalOpen, setIsPresentationModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +30,7 @@ export function Navbar() {
 
   const handleNavClick = (path: string, type: string) => {
     if (type === 'modal') {
-      setIsPresentationModalOpen(true);
+      openPresentationModal();
       setIsOpen(false); // Close mobile menu if open
     }
     // For regular links, Next.js Link component handles navigation
@@ -44,7 +46,7 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <span className="text-xl font-bold text-gradient">
+            <span className="text-xl font-bold text-black">
               SRIMAL
             </span>
           </Link>
@@ -52,33 +54,51 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8 relative z-10">
             {Object.entries(navItems).map(([path, { name, icon, type }]) => {
+              const isActive = pathname === path;
+
               if (type === 'modal') {
                 return (
                   <button
                     key={path}
                     onClick={() => handleNavClick(path, type)}
-                    className="group flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 hover:bg-purple-500/20 hover:scale-105 cursor-pointer"
+                    className={`group flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 cursor-pointer ${
+                      isActive
+                        ? 'bg-black/15 hover:bg-black/20'
+                        : 'hover:bg-black/10'
+                    }`}
                   >
-                    <span className="group-hover:scale-110 transition-transform duration-300 text-purple-400 group-hover:text-purple-300">
+                    <span className={`group-hover:scale-110 transition-transform duration-300 ${
+                      isActive ? 'text-black' : 'text-black/60 group-hover:text-black'
+                    }`}>
                       {icon}
                     </span>
-                    <span className="font-medium text-gray-300 group-hover:text-purple-300 transition-colors duration-300">
+                    <span className={`font-medium transition-colors duration-300 ${
+                      isActive ? 'text-black' : 'text-black/70 group-hover:text-black'
+                    }`}>
                       {name}
                     </span>
                   </button>
                 );
               }
-              
+
               return (
                 <Link
                   key={path}
                   href={path}
-                  className="group flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 hover:bg-purple-500/20 hover:scale-105 cursor-pointer"
+                  className={`group flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 cursor-pointer ${
+                    isActive
+                      ? 'bg-black/15 hover:bg-black/20'
+                      : 'hover:bg-black/10'
+                  }`}
                 >
-                  <span className="group-hover:scale-110 transition-transform duration-300 text-purple-400 group-hover:text-purple-300">
+                  <span className={`group-hover:scale-110 transition-transform duration-300 ${
+                    isActive ? 'text-black' : 'text-black/60 group-hover:text-black'
+                  }`}>
                     {icon}
                   </span>
-                  <span className="font-medium text-gray-300 group-hover:text-purple-300 transition-colors duration-300">
+                  <span className={`font-medium transition-colors duration-300 ${
+                    isActive ? 'text-black' : 'text-black/70 group-hover:text-black'
+                  }`}>
                     {name}
                   </span>
                 </Link>
@@ -90,13 +110,13 @@ export function Navbar() {
           <div className="md:hidden relative z-10">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg hover:bg-purple-500/20 transition-colors duration-300 cursor-pointer"
+              className="p-2 rounded-lg hover:bg-black/10 transition-colors duration-300 cursor-pointer"
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <FaTimes className="w-5 h-5 text-gray-300 hover:text-purple-300 transition-colors duration-300" />
+                <FaTimes className="w-5 h-5 text-black/70 hover:text-black transition-colors duration-300" />
               ) : (
-                <FaBars className="w-5 h-5 text-gray-300 hover:text-purple-300 transition-colors duration-300" />
+                <FaBars className="w-5 h-5 text-black/70 hover:text-black transition-colors duration-300" />
               )}
             </button>
           </div>
@@ -108,34 +128,52 @@ export function Navbar() {
         }`}>
           <div className="flex flex-col space-y-2">
             {Object.entries(navItems).map(([path, { name, icon, type }]) => {
+              const isActive = pathname === path;
+
               if (type === 'modal') {
                 return (
                   <button
                     key={path}
                     onClick={() => handleNavClick(path, type)}
-                    className="flex items-center space-x-3 px-4 py-3 rounded-2xl hover:bg-purple-500/20 transition-all duration-300 group cursor-pointer w-full text-left"
+                    className={`flex items-center space-x-3 px-4 py-3 rounded-2xl transition-all duration-300 group cursor-pointer w-full text-left ${
+                      isActive
+                        ? 'bg-black/15 hover:bg-black/20'
+                        : 'hover:bg-black/10'
+                    }`}
                   >
-                    <span className="group-hover:scale-110 transition-transform duration-300 text-purple-400 group-hover:text-purple-300">
+                    <span className={`group-hover:scale-110 transition-transform duration-300 ${
+                      isActive ? 'text-black' : 'text-black/60 group-hover:text-black'
+                    }`}>
                       {icon}
                     </span>
-                    <span className="font-medium text-gray-300 group-hover:text-purple-300 transition-colors duration-300">
+                    <span className={`font-medium transition-colors duration-300 ${
+                      isActive ? 'text-black' : 'text-black/70 group-hover:text-black'
+                    }`}>
                       {name}
                     </span>
                   </button>
                 );
               }
-              
+
               return (
                 <Link
                   key={path}
                   href={path}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center space-x-3 px-4 py-3 rounded-2xl hover:bg-purple-500/20 transition-all duration-300 group cursor-pointer"
+                  className={`flex items-center space-x-3 px-4 py-3 rounded-2xl transition-all duration-300 group cursor-pointer ${
+                    isActive
+                      ? 'bg-black/15 hover:bg-black/20'
+                      : 'hover:bg-black/10'
+                  }`}
                 >
-                  <span className="group-hover:scale-110 transition-transform duration-300 text-purple-400 group-hover:text-purple-300">
+                  <span className={`group-hover:scale-110 transition-transform duration-300 ${
+                    isActive ? 'text-black' : 'text-black/60 group-hover:text-black'
+                  }`}>
                     {icon}
                   </span>
-                  <span className="font-medium text-gray-300 group-hover:text-purple-300 transition-colors duration-300">
+                  <span className={`font-medium transition-colors duration-300 ${
+                    isActive ? 'text-black' : 'text-black/70 group-hover:text-black'
+                  }`}>
                     {name}
                   </span>
                 </Link>
@@ -144,12 +182,6 @@ export function Navbar() {
           </div>
         </div>
       </div>
-      
-      {/* Presentation Modal */}
-      <PresentationModal 
-        isOpen={isPresentationModalOpen} 
-        onClose={() => setIsPresentationModalOpen(false)} 
-      />
     </nav>
   )
 }
