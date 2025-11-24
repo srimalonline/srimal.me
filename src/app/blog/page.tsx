@@ -35,7 +35,7 @@ const blogPosts = [
     id: 'smart-city-solutions',
     title: 'Building Smart Cities: IoT and AI Integration',
     excerpt: 'How intelligent traffic systems and IoT infrastructure are revolutionizing urban mobility and creating sustainable smart cities.',
-    image: '/images/smart traffic light.webp',
+    image: '/images/smart traffic light.jpg',
     date: '2024-12-28',
     readTime: '12 min read',
     category: 'Technology',

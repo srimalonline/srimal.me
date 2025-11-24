@@ -56,7 +56,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-end gap-4">
           <SocialLinks />
           <p className="text-xs text-gray-600 text-center">
-            Made with my 🦔 and lots of tokens
+            Made with my 🦔
           </p>
         </div>
       </div>

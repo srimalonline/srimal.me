@@ -5,7 +5,7 @@ const projects = [
     id: 'smart-traffic-system',
     title: 'Smart Traffic Light System',
     description: 'AI-powered traffic management system using computer vision and machine learning to optimize traffic flow and reduce congestion in urban areas.',
-    image: '/images/smart traffic light.webp',
+    image: '/images/smart traffic light.jpg',
     technologies: ['Python', 'OpenCV', 'TensorFlow', 'IoT', 'Arduino'],
     category: 'AI/ML',
     status: 'Completed',

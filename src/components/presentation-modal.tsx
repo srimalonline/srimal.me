@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { FaTimes, FaPlay } from 'react-icons/fa';
+import { PresentationDisplayModal } from './presentation-display-modal';
 
 interface PresentationModalProps {
   isOpen: boolean;
@@ -11,20 +12,38 @@ export function PresentationModal({ isOpen, onClose }: PresentationModalProps) {
   const [presentationCode, setPresentationCode] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [presentationUrl, setPresentationUrl] = useState<string | null>(null);
+  const [validationError, setValidationError] = useState<string | null>(null);
 
   const handleClose = () => {
     setIsClosing(true);
   };
 
+  const handleModalDismiss = () => {
+    handleClose();
+  };
+
   useEffect(() => {
-    if (isClosing) {
+    if (isClosing && presentationUrl === null) {
       const timer = setTimeout(() => {
         onClose();
         setIsClosing(false);
       }, 300); // Match animation duration
       return () => clearTimeout(timer);
+    } else if (isClosing && presentationUrl !== null) {
+      // If presentation is loaded, just reset closing state
+      setIsClosing(false);
     }
-  }, [isClosing, onClose]);
+  }, [isClosing, onClose, presentationUrl]);
+
+  // Reset presentation state when input modal closes
+  useEffect(() => {
+    if (!isOpen && !isClosing) {
+      setPresentationUrl(null);
+      setIsLoading(false);
+      setValidationError(null);
+    }
+  }, [isOpen, isClosing]);
 
   // Close modal on Escape key and manage body scroll
   useEffect(() => {
@@ -36,7 +55,7 @@ export function PresentationModal({ isOpen, onClose }: PresentationModalProps) {
 
     if (isOpen && !isClosing) {
       document.addEventListener('keydown', handleEscape);
-      
+
       // Prevent body scrolling and layout shift
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.paddingRight = `${scrollbarWidth}px`;
@@ -45,29 +64,51 @@ export function PresentationModal({ isOpen, onClose }: PresentationModalProps) {
 
     return () => {
       document.removeEventListener('keydown', handleEscape);
-      
+
       // Restore body scrolling
       document.body.style.paddingRight = '';
       document.body.style.overflow = 'unset';
     };
   }, [isOpen, isClosing, onClose]);
 
+  const validatePresentation = async (code: string): Promise<string | null> => {
+    const url = `https://srimalonline.github.io/${code}/`;
+
+    try {
+      const response = await fetch(url, { method: 'HEAD' });
+      if (response.ok) {
+        return url;
+      } else {
+        return null;
+      }
+    } catch {
+      return null;
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!presentationCode.trim()) return;
 
     setIsLoading(true);
-    
-    // TODO: Add presentation loading logic here
-    console.log('Loading presentation with code:', presentationCode);
-    
-    // Simulate loading for now
-    setTimeout(() => {
-      setIsLoading(false);
-      // Close modal after successful load (or handle error)
+    setValidationError(null);
+
+    const validatedUrl = await validatePresentation(presentationCode.trim());
+
+    if (validatedUrl) {
+      setPresentationUrl(validatedUrl);
       handleClose();
       setPresentationCode('');
-    }, 1500);
+    } else {
+      setValidationError('Presentation not found. Please check the code and try again.');
+      setIsLoading(false);
+    }
+  };
+
+  const handlePresentationClose = () => {
+    setPresentationUrl(null);
+    setIsLoading(false);
+    handleModalDismiss();
   };
 
   if (!isOpen) return null;
@@ -116,6 +157,12 @@ export function PresentationModal({ isOpen, onClose }: PresentationModalProps) {
             />
           </div>
 
+          {validationError && (
+            <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+              {validationError}
+            </div>
+          )}
+
           <div className="flex gap-3">
             <button
               type="submit"
@@ -142,6 +189,12 @@ export function PresentationModal({ isOpen, onClose }: PresentationModalProps) {
           </div>
         </form>
       </div>
+
+      <PresentationDisplayModal
+        isOpen={presentationUrl !== null}
+        url={presentationUrl || ''}
+        onClose={handlePresentationClose}
+      />
     </div>
   );
 }

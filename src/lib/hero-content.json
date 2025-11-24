@@ -7,66 +7,6 @@
   "duration": 4000,
   "sections": [
     {
-      "id": "hero1",
-      "background": {
-        "type": "image",
-        "url": "/images/research nsrsit 2025.webp",
-        "overlay": "dark"
-      },
-      "headline": "AI Research Pioneer",
-      "subheadline": "Breaking boundaries in intelligent systems and data-driven innovation.",
-      "cta": {
-        "text": "Explore Research",
-        "url": "/projects",
-        "style": "glass"
-      }
-    },
-    {
-      "id": "hero2",
-      "background": {
-        "type": "image",
-        "url": "/images/research nsrsut 2025 2.webp",
-        "overlay": "dark"
-      },
-      "headline": "Data Science Visionary",
-      "subheadline": "Transforming complex data into actionable insights and breakthrough solutions.",
-      "cta": {
-        "text": "View Analytics",
-        "url": "/projects",
-        "style": "glass"
-      }
-    },
-    {
-      "id": "hero3",
-      "background": {
-        "type": "image",
-        "url": "/images/ieee technical mentor.webp",
-        "overlay": "dark"
-      },
-      "headline": "Tech Mentor & Leader",
-      "subheadline": "Empowering the next generation of engineers and innovators.",
-      "cta": {
-        "text": "Mentorship Impact",
-        "url": "/blog",
-        "style": "glass"
-      }
-    },
-    {
-      "id": "hero4",
-      "background": {
-        "type": "image",
-        "url": "/images/ieee technical mentor 2.webp",
-        "overlay": "dark"
-      },
-      "headline": "Innovation Catalyst",
-      "subheadline": "Driving technological breakthroughs and digital transformation.",
-      "cta": {
-        "text": "Innovation Lab",
-        "url": "/projects",
-        "style": "glass"
-      }
-    },
-    {
       "id": "hero5",
       "background": {
         "type": "image",
@@ -85,7 +25,7 @@
       "id": "hero6",
       "background": {
         "type": "image",
-        "url": "/images/smart traffic light.webp",
+        "url": "/images/smart traffic light.jpg",
         "overlay": "dark"
       },
       "headline": "Smart Systems Creator",
@@ -197,6 +137,66 @@
       "subheadline": "Blending artistry with technology to create extraordinary experiences.",
       "cta": {
         "text": "Creative Works",
+        "url": "/projects",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero1",
+      "background": {
+        "type": "image",
+        "url": "/images/research nsrsit 2025.webp",
+        "overlay": "dark"
+      },
+      "headline": "AI Research Pioneer",
+      "subheadline": "Breaking boundaries in intelligent systems and data-driven innovation.",
+      "cta": {
+        "text": "Explore Research",
+        "url": "/projects",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero2",
+      "background": {
+        "type": "image",
+        "url": "/images/research nsrsut 2025 2.webp",
+        "overlay": "dark"
+      },
+      "headline": "Data Science Visionary",
+      "subheadline": "Transforming complex data into actionable insights and breakthrough solutions.",
+      "cta": {
+        "text": "View Analytics",
+        "url": "/projects",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero3",
+      "background": {
+        "type": "image",
+        "url": "/images/ieee technical mentor.webp",
+        "overlay": "dark"
+      },
+      "headline": "Tech Mentor & Leader",
+      "subheadline": "Empowering the next generation of engineers and innovators.",
+      "cta": {
+        "text": "Mentorship Impact",
+        "url": "/blog",
+        "style": "glass"
+      }
+    },
+    {
+      "id": "hero4",
+      "background": {
+        "type": "image",
+        "url": "/images/ieee technical mentor 2.webp",
+        "overlay": "dark"
+      },
+      "headline": "Innovation Catalyst",
+      "subheadline": "Driving technological breakthroughs and digital transformation.",
+      "cta": {
+        "text": "Innovation Lab",
         "url": "/projects",
         "style": "glass"
       }

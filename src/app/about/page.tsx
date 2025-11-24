@@ -241,7 +241,8 @@ export default function AboutPage() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="mailto:contact@srimal.me"
-            className="px-8 py-4 bg-black text-white font-semibold rounded-full hover:bg-gray-900 transition-all duration-300 hover-lift"
+             className="px-8 py-4 bg-black font-semibold rounded-full hover:bg-gray-900 transition-all duration-300 hover-lift"
+            style={{ color: 'white' }}
           >
             Get In Touch
           </a>
