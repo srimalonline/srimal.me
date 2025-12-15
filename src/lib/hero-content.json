@@ -7,6 +7,21 @@
   "duration": 4000,
   "sections": [
     {
+      "id": "hero7",
+      "background": {
+        "type": "image",
+        "url": "/images/nsbm senior orientation 2023.webp",
+        "overlay": "dark"
+      },
+      "headline": "Community Builder",
+      "subheadline": "Creating inspiring experiences that connect minds and foster innovation.",
+      "cta": {
+        "text": "Community Impact",
+        "url": "/blog",
+        "style": "glass"
+      }
+    },
+    {
       "id": "hero5",
       "background": {
         "type": "image",
@@ -33,21 +48,6 @@
       "cta": {
         "text": "Smart Solutions",
         "url": "/projects",
-        "style": "glass"
-      }
-    },
-    {
-      "id": "hero7",
-      "background": {
-        "type": "image",
-        "url": "/images/nsbm senior orientation 2023.webp",
-        "overlay": "dark"
-      },
-      "headline": "Community Builder",
-      "subheadline": "Creating inspiring experiences that connect minds and foster innovation.",
-      "cta": {
-        "text": "Community Impact",
-        "url": "/blog",
         "style": "glass"
       }
     },
